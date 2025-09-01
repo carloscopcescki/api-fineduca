@@ -1,13 +1,13 @@
 import express from "express";
-import connectDatabase from "./src/database/db.js";
+import connectDatabase from "./database/db.js";
 import dotenv from "dotenv";
 import cors from "cors";
 import helmet from "helmet";
 
-import userRoute from "./src/routes/user.route.js";
-import authRoute from "./src/routes/auth.route.js";
-import swaggerRoute from "./src/routes/swagger.route.js";
-import { registerSite } from "./src/routes/registerSite.js";
+import userRoute from "./routes/user.route.js";
+import authRoute from "./routes/auth.route.js";
+import swaggerRoute from "./routes/swagger.route.js";
+import { registerSite } from "./routes/registerSite.js";
 
 dotenv.config();
 
