@@ -1,6 +1,7 @@
 import express from "express";
 import connectDatabase from "./database/db.js";
 import dotenv from "dotenv";
+import cors from "cors";
 
 import userRoute from "./routes/user.route.js";
 import authRoute from "./routes/auth.route.js";
@@ -16,5 +17,9 @@ app.use(express.json());
 app.use("/user", userRoute);
 app.use("/auth", authRoute);
 app.use("/doc", swaggerRoute);
+
+app.use(cors({
+  origin: "https://fin-educa.vercel.app",
+}));
 
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
